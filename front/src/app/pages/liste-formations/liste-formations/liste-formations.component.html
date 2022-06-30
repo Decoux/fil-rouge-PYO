@@ -1,0 +1,23 @@
+<table *ngIf="theme">
+    <thead>
+        <tr>
+            <th>Théme</th>
+            <th>Libellé</th>
+            <!-- <th>Description</th> -->
+            <th [ngStyle]="{'text-align': 'center'}">Actions</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="theme">
+        <tr *ngFor="let formation of theme.formations; let i = index">
+            <td>{{theme.nom | slice:0:50}} ...</td>
+            <td class="td-nom-formation">{{formation.nom}}</td>
+            <!-- <td>{{txt}}</td> -->
+            <td class="td-actions">
+                <mat-icon (click)="showDetailsFormation(formation)">preview</mat-icon>
+                <mat-icon>login</mat-icon>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!--| slice:0:140    [routerLink]="[formation.nom.replace(regexUri, '-'), formation.id]"   -->
