@@ -18,7 +18,7 @@ public class Session {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@Column(name="data")
+	@Column(name="date")
 	private Date date;
 	@Column(name="lieu")
 	private String lieu;
