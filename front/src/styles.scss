@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@300&family=Roboto:wght@1,300&display=swap');
+html{
+    min-height: 100vh;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+app-themes-page{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+app-root{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+app-liste-formations{
+    width: 100%;
+    padding: 30px;
+    margin-top: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    app-formation-card{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+app-formations-page, app-inscription-client, app-admin-page{
+    height: 100%;
+    display: flex;
+
+}
+app-home-page, app-formations-page, app-inscription-client, app-admin-page{
+    margin-top: 100px;
+} 
+
+app-formations-page{
+    width: 100%;
+    min-height: inherit;
+    font-size: 13px;
+}
+
+app-formulaire-inscription-client{
+    width: 85%;
+    margin-right: 25%;
+    margin-bottom: 15px;
+}
+
+app-home-page, app-admin-page{
+    display: flex;
+    flex-direction: column;
+}
+
+app-home-formations{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin-top: 60px;
+}
+
+app-sidenav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    app-details-formation {
+        width: 100%;
+    }
+}
+
+app-home-page, app-admin-page{
+    flex: 1;
+}
+
+app-admin-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    app-liste-des-utilisateurs{
+        margin-top: 80px;
+        width: 85%;
+        height: 100%;
+    }
+    app-liste-des-sessions{
+        margin-top: 80px;
+        width: 85%;
+        height: 100%;
+    }
+}
+
+app-admin-cards{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    align-items: center;
+}
+
+

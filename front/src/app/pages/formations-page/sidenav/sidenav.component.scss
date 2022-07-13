@@ -1,0 +1,22 @@
+.container-sidenav{
+    height: 100%;
+    width: 400px;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    
+    
+}
+
+.container-sidenav::-webkit-scrollbar {
+    width: 0px; /* width of the entire scrollbar */
+    scrollbar-width: thin;
+    scrollbar-width: 10px;
+    color: red;
+    background-color: #8f8686;
+  }
+
+  .hidden{
+    display: none;
+}

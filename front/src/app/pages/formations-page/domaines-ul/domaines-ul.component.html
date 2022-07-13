@@ -1,0 +1,25 @@
+
+<div class="container-domaine" #listeElem  >
+    <div class="title-domaine" >
+        <p>{{data.nom}}</p>
+    </div>
+    <ul id={{data.id}} class="ul" >
+        <li *ngFor="let theme of data.themes" (click)="showListFormation(theme)">
+            <div class="container-list">
+                <p>
+                    {{theme.nom}} <span>({{theme.formation.length}})<mat-icon class="mat-icon">visibility</mat-icon> </span> 
+                    <!-- <mat-icon >keyboard_arrow_down</mat-icon>
+                    <mat-icon >keyboard_arrow_up</mat-icon>-->
+                    
+                </p>
+                 <div>
+                    <ul>
+                        <li *ngFor="let sousTheme of theme.themes"  [routerLink]="['/catalogue', 'liste-des-formations',data.nom.replace(regexUri, '-'), data.id, theme.nom.replace(regexUri, '-'), theme.id]">{{sousTheme.nom}} 
+                            <mat-icon class="eye-icon">visibility</mat-icon>
+                        </li>
+                     </ul>
+                 </div>
+            </div>
+        </li>
+    </ul>
+</div>

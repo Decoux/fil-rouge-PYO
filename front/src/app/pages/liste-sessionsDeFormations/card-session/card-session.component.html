@@ -1,0 +1,54 @@
+<!-- Movie Card Start -->
+<!-- <div class="card-view">
+              <div class="card-header avengerEndgame">
+                  <div class="card-header-icon">
+                      <a href="#">
+                          <i class="material-icons header-icon">play_arrow</i>
+                      </a>
+                  </div>
+              </div>
+
+              </div>
+</div>
+</div></main> -->
+
+<div class="card-details-formation">
+  <mat-card>
+    <mat-card-subtitle>
+      La carte de la SessiondeFormation
+      <div class="content-details-formation">
+        <div>
+          <h4>{{ dataSession.date }}</h4>
+          <hr />
+          <div class="content-details-session">
+            <span>{{ dataSession.formation_id }}</span>
+            <span>{{ dataSession.adresse_id }}</span>
+          </div>
+        </div>
+      </div>
+    </mat-card-subtitle></mat-card
+  >
+
+  <div class="body-content-details-formation">
+    <div class="infos">
+      <div class="container-content-details-formation-left">
+        <!--{{ formations.description | slice : 0  : 50  }} -->
+        <p>Description: {{ description | slice: 0:100 }}...</p>
+        <div ngClass="{'height':'100px'}">
+          <h2>{{ dataSession.prix }} €</h2>
+          <!-- <p class="text-bg-img">Acceder au test (icon)</p> -->
+        </div>  <div class="container-actions">
+          <button class="btn-test">Acceder au test (icon)</button>
+        </div>
+      </div>
+      <div class="container-content-details-formation-action">
+
+
+        <button class="btn">
+          Contacter le Responsable <br />d’enregistrement des formations
+        </button>
+        <button class="btn">Action-3</button>
+      </div>
+    </div>
+  </div>
+</div>

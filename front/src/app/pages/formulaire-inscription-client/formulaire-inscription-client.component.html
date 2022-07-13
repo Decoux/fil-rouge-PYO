@@ -1,0 +1,30 @@
+
+<div class="container-inscription-client">
+    <form class="form-inscription-client" [formGroup]="userForm">
+        <div class="container-input">
+            <label for="" class="label"> Nom : <span class="required-input">*</span></label>
+            <input type="text" class="input" formControlName="nom">
+        </div>
+        <div class="container-input">
+            <label for="" class="label">Prénom : <span class="required-input">*</span></label>
+            <input type="text" class="input" formControlName="prenom">
+        </div>
+        <div class="container-input">
+            <label for="" class="label">mail : <span class="required-input">*</span></label>
+            <input type="text" class="input" formControlName="mail">
+        </div>
+        <div class="container-input">
+            <label for="" class="label">Date de naissance : <span class="required-input">*</span></label>
+            <input type="date" class="input" formControlName="birthDay">
+        </div>
+        <div class="container-input">
+            <label for="" class="label">Entreprise : <span class="required-input">*</span></label>
+            <input type="text" class="input" formControlName="entreprise">
+        </div>
+        <div class="container-btn-inscription">
+            <button class="btn" (click)="submitForm()">S'inscrire</button>
+        </div>
+    </form>
+</div>
+
+

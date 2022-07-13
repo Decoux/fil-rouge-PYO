@@ -1,0 +1,7 @@
+<div class="container-sidenav" *ngIf="domaines">
+    
+    <app-domaines #listeUls  *ngFor="let item of domaines" [data]="item" class="domaine-component" (messageEvent)="onClick($event)"></app-domaines>
+
+</div>
+
+<router-outlet></router-outlet>

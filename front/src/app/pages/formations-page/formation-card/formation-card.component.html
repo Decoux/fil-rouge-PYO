@@ -1,0 +1,29 @@
+
+
+<div *ngFor="let formation of formations" class="cart">
+    <div class="box-top">
+        
+        <h1>{{formation.nom}}</h1>
+
+        <div class="prix">
+            {{formation.prix}}<mat-icon>euro_symbol</mat-icon>
+        </div>
+        
+    </div>
+    <div class="container-content-card">
+        <div class="description">{{formation.description}}</div>
+        <div class="box-right">
+            <div class="container-btn">
+                <div (click)="showDetailsFormation(formation)" class="button">
+                    <mat-icon>preview</mat-icon>
+                    <span [ngStyle]="{'margin-left': '10px'}">Voir le details</span>
+                </div>
+                <div (click)="login(formation)" class="button">
+                    <mat-icon>login</mat-icon>
+                    <span [ngStyle]="{'margin-left': '10px'}">S'inscrire</span>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</div>

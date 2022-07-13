@@ -1,0 +1,85 @@
+@import '../../../../assets/variables.scss';
+
+
+.cart{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    // border: 1px solid $color-site;
+    height: 250px;
+    width: 75%;
+    margin: 20px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .box-top{
+        display: flex;
+        justify-content: space-between;
+        h1{
+            font-size: 30px;
+            text-decoration: underline;
+            text-decoration-color: $color-site; 
+        }
+        .prix{
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            margin-right: 30px;
+            margin-top: -50px;
+            color: $color-site;
+            font-weight: 600;
+            mat-icon{
+                margin-left: 5px;
+                color: $color-site;
+            }
+        }
+    }
+   
+    .container-content-card{
+      
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        .description{
+            font-size: 12px;
+            margin-right: 80px;
+        }
+        
+    }
+    .box-right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      
+        .container-btn{
+            display: flex;
+            .button{
+                width: 200px;
+                display: flex;
+                margin: 10px;
+                align-items: center;
+                justify-content: center;
+                padding: 30px;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                height: 50px;
+                
+            }
+            .button:hover{
+                width: 200px;
+                display: flex;
+                margin: 10px;
+                align-items: center;
+                justify-content: center;
+                padding: 30px;
+                box-shadow: rgba(21, 21, 21, 0.2) 0px 2px 8px 0px;
+                height: 50px;
+                background-color: $color-light;
+                mat-icon{
+                    color: $color-site;
+                    
+                 }
+            }
+           
+        }
+    }
+}

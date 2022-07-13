@@ -1,0 +1,51 @@
+
+.background
+{
+ width: 620px;
+ height: 350px;
+ display: block;
+ margin: auto;
+ background-color: #ffffff;
+
+
+}
+
+.card-header
+{
+ background-color: #ffffff;
+ height: 100px;
+ text-align: right;
+ font-size: 40px;
+ padding: 10px;
+ font-weight: 600;
+ color: #02b4f2;
+}
+
+.name
+{
+ font-size: 60px;
+ padding: 1px;
+ font-weight: 600;
+ color: #ffffff;
+}
+
+.card
+{
+ height: 250px;
+ margin-top: 15px;
+ background-color: #f2a602;
+ padding: 30px;
+ color: white;
+ text-align: left;
+ font-weight: 500;
+ border-radius: 20px;
+}
+
+.info
+{
+ color: white;
+ margin-top: 20px;
+ text-align: left;
+ font-weight: 150;
+ font-size: 20px;
+}

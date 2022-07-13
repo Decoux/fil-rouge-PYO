@@ -1,0 +1,42 @@
+<div class="text-home-formation">
+    <div class="container-p">
+        <p>La société PYO vous fourni à travers son portail web un accès à son catalogue, riche de plus 800 formations. Celles-ci couvrent plusieurs domaines.</p><br>
+        <p>Les formations sont regroupées par thèmes.</p><br>
+        <p>En cliquant sur un théme vous pouvez accéder à une liste de formations liées au théme choisi.</p><br>
+        <p>Concernant les informations sur le contenu de la formation ainsi qu’aux informations sur le prix, la dates et le lieux des prochaines sessions planifiées, il faudra alors choisir une formation dans la liste des formations que nous vous proposons.</p><br>
+        <p>Avant de participer à une formation un lien vous sera envoyer afin de tester vos connaissances en ligne.</p>
+    </div>
+    <div class="contianer-domaines-ul">
+        <app-domaines-ul   *ngFor="let item of domaines" [data]="item" class="domaine-component"></app-domaines-ul>
+        <app-domaines-ul   *ngFor="let item of domaines" [data]="item" class="domaine-component"></app-domaines-ul>
+    </div>
+    <div class="last-p">
+        <p>Vous pouvez également demander une formation personnalisée selon vos besoins et vos objectifs. Pour plus d’information sur ce point n’hésitez pas à contacter le <span [ngStyle]="{'font-weight': 'bold'}">Responsable d’enregistrement des formations</span></p>
+    </div>
+</div>
+
+<!--
+<p>
+    Le catalogue de formation : Le client souhaite fournir à travers son portail web un accès
+à son catalogue, riche de plus 800 formations. Celles-ci couvrent plusieurs domaines, i.e.,
+ressources humaines, management, finance, informatique, etc. Dans ce qui suit, nous nous
+intéressons qu’aux formations liées au domaine de l’informatique.
+Les formations sont regroupées par thèmes, i.e., Réseaux, Systèmes d’exploitation, Gestion
+de projets, Langages de développement, etc. Chaque thème est ou peut être divisé en sousthèmes (par exemple. le thème Langages de développement est composé de JAVA, C#, C++,
+Langages du WEB, etc.). Finalement, chaque sous-thème est lui aussi décomposé en d’autres
+sous-thèmes ou bien directement d’une liste des formations de ce thème. Exemple, le sousthème Langages du WEB comprend la liste des formations sur PHP, JavaScript, Ajax, etc. Bien
+sûr, une formation peut faire partie de plusieurs sous-thèmes en même temps. Exemple XML
+1
+peut faire partie du thème Langages du Web et même temps de celui de Modélisation des
+données.
+Une fois que le client clique sur la formation PHP par exemple, il pourra accéder au contenu
+de la formation ainsi qu’aux informations sur le prix, dates et lieux des prochaines sessions
+planifiées, et un lien qui lui permets de tester ses prérequis en ligne pour voir s’il a le niveau
+nécessaire pour suivre la formation (i.e., pas trop faible, pas trop fort !). Concernant
+les informations sur le contenu de la formation ainsi que sur les détails de présentation, il faudra
+contacter le Responsable Catalogue afin de voir avoir lui le contenu à mettre absolument
+sur le site ainsi que les données qu’il faudra surlignées et mettre en évidence pour les clients.
+Un lien devra bien sûr être fourni au client afin de lui permettre de contacter directement
+le service commercial ou bien de s’enregistrer directement en ligne pour suivre une session
+donnée. Le point suivant détail cet aspect-là du SI.
+</p> -->

@@ -1,0 +1,38 @@
+<h1>Listes des apprenants</h1>
+
+<table *ngIf="utilisateurs">
+    <thead>
+        <tr>     
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Date de naissance</th>
+            <th>Mail</th>
+            <th>Entreprise</th>
+            <th>Service</th>        
+            <!-- <th>Description</th> -->
+            <th [ngStyle]="{'text-align': 'center'}">Actions</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="utilisateurs">
+        <tr *ngFor="let utilisateur of utilisateurs; let i = index">
+            <td>{{utilisateur.nom | slice:0:50}} ...</td>
+            <td>{{utilisateur.prenom | slice:0:50}} ...</td>
+            <td>{{utilisateur.birthDay | date: 'ddMMyyyy' }} ...</td>
+            <td>{{utilisateur.mail}}</td>
+            <td>jgvj;</td>
+            <td>khgk</td>
+            <!-- <td>{{utilisateur.mail | slice:0:50}} ...</td>
+            <td>{{utilisateur.enterprise | slice:0:50}} ...</td>
+            <td>{{utilisateur.serviceId | slice:0:50}} ...</td> -->
+            <!-- <td>{{txt}}</td> -->
+            <td class="td-actions">
+                <mat-icon>create</mat-icon>
+                <mat-icon>delete</mat-icon>
+
+                <!-- <mat-icon (click)="showDetailsFormation(formation)">preview</mat-icon>
+                <mat-icon (click)="login(formation)">login</mat-icon> -->
+                <!-- {{utilisateur.prenom}} -->
+            </td>
+        </tr>
+    </tbody>
+</table>
