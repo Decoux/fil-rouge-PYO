@@ -17,6 +17,7 @@ export class DomainesUlComponent implements OnInit {
 
   ngOnInit(): void {
     this.data.themes.sort((a: Theme,b: Theme) => b.themes.length - a.themes.length);
+    
   }
 
 

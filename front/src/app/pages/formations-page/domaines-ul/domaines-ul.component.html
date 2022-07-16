@@ -8,7 +8,7 @@
             <div class="container-list">
                 <div class="element-theme">
                     <p>
-                        {{theme.nom}} <span>({{theme.formation.length}})<mat-icon class="mat-icon">visibility</mat-icon> </span> 
+                        {{theme.nom | uppercase}} <span *ngIf="theme.formation">({{theme.formation.length}})<mat-icon class="mat-icon">visibility</mat-icon> </span> 
                         <!-- <mat-icon >keyboard_arrow_down</mat-icon>
                         <mat-icon >keyboard_arrow_up</mat-icon>-->
                         
@@ -17,9 +17,14 @@
                 
                  <div>
                     <ul class="ul-sous-theme">
-                        <li *ngFor="let sousTheme of theme.themes"  [routerLink]="['/catalogue', 'liste-des-formations',data.nom.replace(regexUri, '-'), data.id, theme.nom.replace(regexUri, '-'), theme.id]" class="element-theme">
-                            <mat-icon>subdirectory_arrow_right</mat-icon>
-                            <p>
+                        <li  [ngStyle]="{'margin-left': '26px'}" *ngFor="let sousTheme of theme.themes"  [routerLink]="['/catalogue', 'liste-des-formations',data.nom.replace(regexUri, '-'), data.id, theme.nom.replace(regexUri, '-'), theme.id]" class="element-theme">
+                            <mat-icon *ngIf="sousTheme.id != theme.id">subdirectory_arrow_right</mat-icon>
+                            <p *ngIf="sousTheme.id != theme.id">
+                                {{sousTheme.nom}} 
+                                <span>({{sousTheme.formation.length}})<mat-icon class="mat-icon">visibility</mat-icon> </span>
+                            </p>
+                            
+                            <p *ngIf="sousTheme.id == theme.id">
                                 {{sousTheme.nom}} 
                                 <span>({{sousTheme.formation.length}})<mat-icon class="mat-icon">visibility</mat-icon> </span>
                             </p>

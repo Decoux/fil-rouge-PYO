@@ -25,7 +25,9 @@ export class ListeFormationsComponent implements OnInit {
 
     this.subscription = this.formationsService.currentTheme.subscribe((theme: any) => {
       if(theme){
+        
         this.theme = theme
+        
         this.formationsService.getDataBreadcrumb({label: theme.nom, item: 'theme'});
         
       }

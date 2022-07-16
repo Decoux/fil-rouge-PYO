@@ -22,7 +22,6 @@ export class SousThemeComponent implements OnInit {
 
 
       if(theme.formation){
-        console.log('piou');
         
         this.router.navigate(['/catalogue', 'liste-des-formations', this.theme.nom.replace(this.regexUri, '-'), this.theme.id, theme.nom.replace(this.regexUri, '-'), theme.id]);
         this.formationsService.changeTheme(theme);
