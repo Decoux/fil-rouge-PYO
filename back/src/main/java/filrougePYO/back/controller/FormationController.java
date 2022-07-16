@@ -27,11 +27,9 @@ public class FormationController {
 //	public void adds(Formation formation) {
 //		this.formationDao.save(formation);
 //	}
-@PostMapping("ajoutFormation")
-@ResponseStatus(code = HttpStatus.CREATED)
+	@PostMapping("ajoutFormation")
+	@ResponseStatus(code = HttpStatus.CREATED)
 	public void createFormation(@RequestBody Formation formation){
-	System.out.println( "llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll");
-	System.out.println(formation.getNom());
 		formationService.createFormation(formation);
 	}
 	

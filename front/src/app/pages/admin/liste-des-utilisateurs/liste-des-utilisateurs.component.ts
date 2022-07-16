@@ -19,9 +19,6 @@ export class ListeDesUtilisateursComponent implements OnInit {
       
       if(utilisateurs != null){
         this.utilisateurs = utilisateurs     
-        
-        console.log(this.utilisateurs);
-        
       }
     })
     

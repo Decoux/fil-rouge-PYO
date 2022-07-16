@@ -39,8 +39,8 @@
         placeholder="Theme de la formation"
       /> -->
 
-      <select class="custom-select d-block w-100"  formControlName="theme">
-        <option value="{{theme.id}}" *ngFor="let theme of themes">{{theme.nom}}</option>
+      <select class="custom-select d-block w-100"  formControlName="themes">
+        <option [ngValue]="theme" *ngFor="let theme of themes">{{theme.nom}}</option>
       </select>
 
       <label for="formation">Formation</label>

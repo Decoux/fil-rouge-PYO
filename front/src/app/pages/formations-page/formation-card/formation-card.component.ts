@@ -16,10 +16,7 @@ export class FormationCardComponent implements OnInit {
 
   constructor(private formationsService: FormationsService, private router: Router) { }
 
-  ngOnInit(): void {
-    console.log(this.formations);
-    
-   }
+  ngOnInit(): void {}
 
 
    showDetailsFormation(formation: any){

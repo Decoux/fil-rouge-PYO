@@ -33,11 +33,11 @@ subscription! : Subscription;
       nom: ['', [Validators.required]],
       description: ['', [Validators.required]],
       prix: ['', [Validators.required]],
-      theme: [0],
+      themes: [0],
+      personnalise: false
     });
 
     this.subscription= this.themesService.currentThemes.subscribe((themes : any) =>{
-console.log(themes)
       if(themes.length >0){
         this.themes= themes;
       }
@@ -45,9 +45,11 @@ console.log(themes)
   }
 
   public submitForm() {
-    this.formation = this.formationForm.value;
-    this.formation.theme= this.themes.filter(t => t.id== this.formationForm.value.theme)[0];
+    // this.formation.theme = this.formationForm.value.theme;
+    
+    
+    // this.formation.theme= this.themes.filter(t => t.id== this.formationForm.value.theme)[0];
     ///console.log(this.formation)
-    this.formationService.envoiFormulaire(this.formation);
+    this.formationService.envoiFormulaire(this.formationForm.value);
   }
 }

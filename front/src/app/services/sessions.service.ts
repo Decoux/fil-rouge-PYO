@@ -18,7 +18,6 @@ export class SessionsService{
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
     this.http.get('http://localhost:8080/sessions').subscribe((sessions: any) =>{
-      console.log(sessions)
 
       if(sessions.length > 0){
         this.formationSource.next(sessions)

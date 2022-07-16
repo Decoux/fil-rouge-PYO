@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import filrougePYO.back.dto.DomaineDto;
 import filrougePYO.back.entity.Domaine;
 import filrougePYO.back.services.DomaineService;
 
@@ -20,10 +21,15 @@ public class DomaineController {
 	@Autowired
 	private DomaineService domaineService;
 	
+	@GetMapping("/themeBySousTheme")
+	@ResponseStatus(code=HttpStatus.OK)
+	public List<DomaineDto> findAllBySousThemes(){ 
+		return this.domaineService.findAllBySousThemes();
+	}
+	
 	@GetMapping("")
 	@ResponseStatus(code=HttpStatus.OK)
 	public List<Domaine> findAll(){
-		
 		return this.domaineService.findAll();
 	}
 	

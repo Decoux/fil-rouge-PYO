@@ -15,14 +15,10 @@ currentThemes = this.themesSource.asObservable();
 
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
-    //contacte ma bdd pour recuperer le resultat
+    // contacte ma bdd pour recuperer le resultat
     this.http.get(this.urlApi+"/themes").subscribe((data :any) => {
-       console.log(data);
        if(data!){
-        console.log(data);
         this.themesSource.next(data)
-
-
       }
     });
    }

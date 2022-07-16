@@ -20,8 +20,6 @@ export class AdminCardsComponent implements OnInit {
 
   ngOnInit(): void {
     this.items = this.adminService.shareItems();
-    console.log(this.items);
-    
   }
 
 }
