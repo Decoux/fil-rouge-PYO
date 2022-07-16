@@ -22,11 +22,9 @@ export class DomainesUlComponent implements OnInit {
 
 
   showListFormation(theme: any){
-    if(theme.formation.length > 0){
       this.router.navigate(['catalogue', 'liste-des-formations',this.data.nom.replace(this.regexUri, '-'), this.data.id, theme.nom.replace(this.regexUri, '-'), theme.id]);
       this.formationsService.changeTheme(theme);
       sessionStorage.setItem('liste-formations', JSON.stringify(theme) );
-    }
   }
 
 }

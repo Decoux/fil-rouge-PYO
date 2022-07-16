@@ -4,20 +4,25 @@
         <p>{{data.nom}}</p>
     </div>
     <ul id={{data.id}} class="ul" >
-        <li *ngFor="let theme of data.themes" (click)="showListFormation(theme)">
+        <li *ngFor="let theme of data.themes" >
             <div class="container-list">
                 <div class="element-theme">
-                    <p>
+                    <p *ngIf="!theme.formation">
                         {{theme.nom | uppercase}} <span *ngIf="theme.formation">({{theme.formation.length}})<mat-icon class="mat-icon">visibility</mat-icon> </span> 
                         <!-- <mat-icon >keyboard_arrow_down</mat-icon>
                         <mat-icon >keyboard_arrow_up</mat-icon>-->
+                        
+                    </p>
+                    <p *ngIf="theme.formation" (click)="showListFormation(theme)">
+                        {{theme.nom | uppercase}} <span *ngIf="theme.formation">({{theme.formation.length}})<mat-icon class="mat-icon">visibility</mat-icon> </span> 
+                      
                         
                     </p>
                 </div>
                 
                  <div>
                     <ul class="ul-sous-theme">
-                        <li  [ngStyle]="{'margin-left': '26px'}" *ngFor="let sousTheme of theme.themes"  [routerLink]="['/catalogue', 'liste-des-formations',data.nom.replace(regexUri, '-'), data.id, theme.nom.replace(regexUri, '-'), theme.id]" class="element-theme">
+                        <li  [ngStyle]="{'margin-left': '26px'}" *ngFor="let sousTheme of theme.themes"  (click)="showListFormation(sousTheme)" class="element-theme">
                             <mat-icon *ngIf="sousTheme.id != theme.id">subdirectory_arrow_right</mat-icon>
                             <p *ngIf="sousTheme.id != theme.id">
                                 {{sousTheme.nom}} 

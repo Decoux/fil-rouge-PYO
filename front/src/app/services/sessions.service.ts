@@ -21,7 +21,6 @@ export class SessionsService{
 
       if(sessions.length > 0){
         this.formationSource.next(sessions)
-        // console.log(sessions)
         this.data = sessions
       }
     })

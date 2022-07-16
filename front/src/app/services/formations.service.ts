@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import Domaine from '../models/domaine.model';
+import Theme from '../models/theme.model';
 
 interface domaines{
   id: string;
@@ -73,4 +74,8 @@ export class FormationsService  {
     console.log(formation)
    }
 
-}
+   getFormationsByThemeId(theme_id: any){
+    return this.http.get(this.urlApi + '/themes/id=' + parseInt(theme_id));
+   }
+
+} 

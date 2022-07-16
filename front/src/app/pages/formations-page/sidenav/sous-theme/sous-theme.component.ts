@@ -16,32 +16,21 @@ export class SousThemeComponent implements OnInit {
 
   constructor(private router: Router, private formationsService: FormationsService) { }
 
-    ngOnInit(): void {}
+    ngOnInit(): void { }
 
     showThemes(theme: any) {
-
-
-      if(theme.formation){
-        
-        this.router.navigate(['/catalogue', 'liste-des-formations', this.theme.nom.replace(this.regexUri, '-'), this.theme.id, theme.nom.replace(this.regexUri, '-'), theme.id]);
-        this.formationsService.changeTheme(theme);
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////
-        sessionStorage.setItem('liste-formations', JSON.stringify(theme) );
-      }else {
         this.isShowThemes = !this.isShowThemes
-      }
-    
+        if(theme.formation){
+          this.router.navigate(['/catalogue', 'liste-des-formations', this.theme.nom.replace(this.regexUri, '-'), this.theme.id, theme.nom.replace(this.regexUri, '-'), theme.id]);
+        }
     }
 
     showListFormation(theme: any){
-      
         if(theme.formation.length > 0){
           this.router.navigate(['/catalogue', 'liste-des-formations', this.theme.nom.replace(this.regexUri, '-'), this.theme.id, theme.nom.replace(this.regexUri, '-'), theme.id]);
           this.formationsService.changeTheme(theme);
           sessionStorage.setItem('liste-formations', JSON.stringify(theme) );
         }
-      
-    
     }
   }
 

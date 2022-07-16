@@ -45,11 +45,6 @@ subscription! : Subscription;
   }
 
   public submitForm() {
-    // this.formation.theme = this.formationForm.value.theme;
-    
-    
-    // this.formation.theme= this.themes.filter(t => t.id== this.formationForm.value.theme)[0];
-    ///console.log(this.formation)
     this.formationService.envoiFormulaire(this.formationForm.value);
   }
 }

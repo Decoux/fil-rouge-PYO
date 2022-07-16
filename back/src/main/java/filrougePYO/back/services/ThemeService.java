@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ThemeService {
@@ -27,4 +28,8 @@ public class ThemeService {
     public List<Theme> getThemes(){
       return themeDao.findAll();
     }
+    
+    public Optional<Theme> getThemeWithFormations(int id) {
+		return themeDao.findById((long) id);   
+	}
 }

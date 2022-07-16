@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import FormationModel from 'src/app/models/formation.model';
 import { FormationsService } from 'src/app/services/formations.service';
 import { Router } from '@angular/router';
+import Theme from 'src/app/models/theme.model';
 
 @Component({
   selector: 'app-formation-card',
@@ -11,17 +12,15 @@ import { Router } from '@angular/router';
 })
 export class FormationCardComponent implements OnInit {
 
-  @Input() formations!: FormationModel[];
+  @Input() themes!: any;
   regexUri: RegExp = / /g
 
   constructor(private formationsService: FormationsService, private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
 
    showDetailsFormation(formation: any){
-  
-    
     this.formationsService.detailsFormation(formation);
     this.router.navigate([this.router.url, formation.nom.replace(this.regexUri, '-'), formation.id])
     sessionStorage.setItem("details-formation",  JSON.stringify(formation))

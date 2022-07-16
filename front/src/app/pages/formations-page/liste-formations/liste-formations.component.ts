@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ParamMap, Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router'
 import { Subscription } from 'rxjs';
 import { FormationsService } from 'src/app/services/formations.service';
@@ -22,16 +22,11 @@ export class ListeFormationsComponent implements OnInit {
   items: any = [];
 
   ngOnInit(): void {
-
-    this.subscription = this.formationsService.currentTheme.subscribe((theme: any) => {
-      if(theme){
-        
+    this.route.paramMap.subscribe((params : ParamMap)=> {  
+      this.formationsService.getFormationsByThemeId(params.get("theme_id")).subscribe(theme => {
         this.theme = theme
-        
-        this.formationsService.getDataBreadcrumb({label: theme.nom, item: 'theme'});
-        
-      }
-    })
+      })
+    }); 
 
     if(sessionStorage.getItem('liste-formations')){
       this.theme = sessionStorage.getItem('liste-formations')
@@ -40,8 +35,6 @@ export class ListeFormationsComponent implements OnInit {
   }
 
   showDetailsFormation(formation: any){
-  
-    
     this.formationsService.detailsFormation(formation);
     this.router.navigate([this.router.url, formation.nom.replace(this.regexUri, '-'), formation.id])
     sessionStorage.setItem("details-formation",  JSON.stringify(formation))

@@ -1,6 +1,17 @@
 @import '../../../../assets/variables.scss';
 
 
+p{
+    font-size: 30px;
+    color: $color-dark;
+    text-decoration: underline;
+    text-decoration-color: $color-site;
+    position: relative;
+    left: -15px;
+    width: 75%;
+    font-weight: bold;
+    
+}
 .cart{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     // border: 1px solid $color-site;
