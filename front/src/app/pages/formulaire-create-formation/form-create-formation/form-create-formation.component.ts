@@ -7,6 +7,7 @@ import SessionModel from 'src/app/models/session.model';
 import Theme from 'src/app/models/theme.model';
 import { FormationsService } from 'src/app/services/formations.service';
 import { ThemesService } from 'src/app/services/themes.service';
+
 @Component({
   selector: 'app-form-create-formation',
   templateUrl: './form-create-formation.component.html',
@@ -34,7 +35,8 @@ export class FormCreateFormationComponent implements OnInit {
       nom: ['', [Validators.required]],
       description: ['', [Validators.required]],
       prix: ['', [Validators.required]],
-      theme: [0],
+      themes: [0],
+      personnalise: false,
     });
 
     this.subscription = this.themesService.currentThemes.subscribe(

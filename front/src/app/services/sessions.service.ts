@@ -21,13 +21,18 @@ export class SessionsService{
   formation!:any
   sessions!: any
   urlApi="http://localhost:8080";
+  // sessions: any = {}
+  // static currentSession: any;
 
-  constructor(
-    private http: HttpClient,
-    private activatedRoute: ActivatedRoute,
-    private router: Router)
-    {
-    this.http.get('http://localhost:8080/adresses').subscribe((sessions: any) =>{
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
+    this.http.get('http://localhost:8080/sessions').subscribe((sessions: any) =>{
+
+  // constructor(
+  //   private http: HttpClient,
+  //   private activatedRoute: ActivatedRoute,
+  //   private router: Router)
+  //   {
+  //   this.http.get('http://localhost:8080/adresses').subscribe((sessions: any) =>{
       if(sessions.length > 0){
         this.sessionSource.next(sessions)
         this.data = sessions

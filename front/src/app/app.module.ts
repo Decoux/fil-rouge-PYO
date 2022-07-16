@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListeFormationsComponent } from './pages/formations-page/liste-formations/liste-formations.component';
 import { RouterModule } from '@angular/router';
-import { DomainesComponent } from './pages/formations-page/domaines/domaines.component';
+import { DomainesComponent } from './pages/formations-page/sidenav/domaines/domaines.component';
 import { NavBarComponent } from './_commons/nav-bar/nav-bar.component';
 import { FooterComponent } from './_commons/footer/footer.component';
 
@@ -33,6 +33,7 @@ import { AdminPageComponent } from './pages/admin/admin-page/admin-page.componen
 import { AdminCardsComponent } from './pages/admin/admin-cards/admin-cards.component';
 import { FormationCardComponent } from './pages/formations-page/formation-card/formation-card.component';
 import { FormCreateSessionComponent } from './pages/formulaire-create-session/form-create-session/form-create-session.component';
+import { SousThemeComponent } from './pages/formations-page/sidenav/sous-theme/sous-theme.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,8 @@ import { FormCreateSessionComponent } from './pages/formulaire-create-session/fo
     DomainesUlComponent,
     AdminCardsComponent,
     FormationCardComponent,
-    FormCreateSessionComponent
+    FormCreateSessionComponent,
+    SousThemeComponent
   ],
 
   imports: [

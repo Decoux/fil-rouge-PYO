@@ -1,0 +1,10 @@
+<div class="container-domaine">
+    <div class="title-domaine" (click)="showThemes()">
+        <p>{{data.nom}} <mat-icon *ngIf="!isShowThemes">keyboard_arrow_down</mat-icon><mat-icon *ngIf="isShowThemes" >keyboard_arrow_up</mat-icon></p>
+    </div>
+    <div *ngIf="isShowThemes" class="container-app-theme">
+        <ng-container *ngFor="let theme of data.themes">
+            <app-sous-theme [theme]="theme"></app-sous-theme>
+        </ng-container>
+    </div>
+</div>

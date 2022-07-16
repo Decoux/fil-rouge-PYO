@@ -1,6 +1,9 @@
-@import '../../../../assets/variables.scss';
+@import '../../../../../assets/variables.scss';
 
 .container-domaine{
+    .container-app-theme{
+        background-color: #f5f5f5;
+    }
 p{
     padding: 5px;
     display: flex;
@@ -32,6 +35,7 @@ p{
             // padding: 5px;
             div{
                 p{
+                    
                     mat-icon{
                         color: #5280eb;
                     }

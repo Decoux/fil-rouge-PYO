@@ -27,17 +27,28 @@ export class FormationsService  {
   currentBreadcrumb = this.breadcrumbSource.asObservable();
 
   data = []
+  data2 = []
   themes: any = {}
   urlApi="http://localhost:8080"
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
-    this.http.get('http://localhost:8080/domaines').subscribe((domaines: any) =>{
+    this.http.get('http://localhost:8080/domaines/themeBySousTheme').subscribe((domaines: any) =>{
       if(domaines.length > 0){
         this.domainesSource.next(domaines)
         this.data = domaines
 
       }
     })
+
+
+    // this.http.get('http://localhost:8080/domaines/themeBySousTheme').subscribe((domaines: any) =>{
+    //   if(domaines.length > 0){
+    //     // this.domainesSource.next(domaines)
+    //     this.data2 = domaines  
+    //     console.log(this.data2);
+
+    //   }
+    // })
    }
 
    getDataBreadcrumb(label: any){

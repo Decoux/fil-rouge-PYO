@@ -25,27 +25,6 @@ export class FormationsPageComponent implements OnInit {
 
     this.getElemRoute = this.route.url.split('/')[this.route.url.split('/').length - 1];
     
-
-    // this.subscription = this.formationsService.currentBreadcrumb.subscribe((label: any) => {
-    //   this.isShowBreadcrumb = false
-    //   if(label.item == 'theme'){
-    //     console.log(label);
-    //     if(this.items.find(element =>  element.item == "theme" )){
-    //       this.items[1] = label
-    //     }else {
-    //       this.items.push(label)
-    //     }
-    //   }else if (label.item == 'formation'){
-    //     if(this.items.find(element =>  element.item == "formation" )){
-    //       this.items[2] = label
-    //     }else {
-    //       this.items.push(label)
-    //     }
-    //   }
-    //   setTimeout(() => {
-    //     this.isShowBreadcrumb = true
-    //   }, 100);
-    // })
   }
 
 }

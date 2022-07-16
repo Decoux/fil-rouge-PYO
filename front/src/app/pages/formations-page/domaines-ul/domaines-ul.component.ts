@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import Theme from 'src/app/models/theme.model';
 import { FormationsService } from 'src/app/services/formations.service';
 @Component({
   selector: 'app-domaines-ul',
@@ -15,6 +16,7 @@ export class DomainesUlComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.data.themes.sort((a: Theme,b: Theme) => b.themes.length - a.themes.length);
   }
 
 

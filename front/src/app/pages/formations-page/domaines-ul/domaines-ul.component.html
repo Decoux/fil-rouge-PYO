@@ -6,16 +6,23 @@
     <ul id={{data.id}} class="ul" >
         <li *ngFor="let theme of data.themes" (click)="showListFormation(theme)">
             <div class="container-list">
-                <p>
-                    {{theme.nom}} <span>({{theme.formation.length}})<mat-icon class="mat-icon">visibility</mat-icon> </span> 
-                    <!-- <mat-icon >keyboard_arrow_down</mat-icon>
-                    <mat-icon >keyboard_arrow_up</mat-icon>-->
-                    
-                </p>
+                <div class="element-theme">
+                    <p>
+                        {{theme.nom}} <span>({{theme.formation.length}})<mat-icon class="mat-icon">visibility</mat-icon> </span> 
+                        <!-- <mat-icon >keyboard_arrow_down</mat-icon>
+                        <mat-icon >keyboard_arrow_up</mat-icon>-->
+                        
+                    </p>
+                </div>
+                
                  <div>
-                    <ul>
-                        <li *ngFor="let sousTheme of theme.themes"  [routerLink]="['/catalogue', 'liste-des-formations',data.nom.replace(regexUri, '-'), data.id, theme.nom.replace(regexUri, '-'), theme.id]">{{sousTheme.nom}} 
-                            <mat-icon class="eye-icon">visibility</mat-icon>
+                    <ul class="ul-sous-theme">
+                        <li *ngFor="let sousTheme of theme.themes"  [routerLink]="['/catalogue', 'liste-des-formations',data.nom.replace(regexUri, '-'), data.id, theme.nom.replace(regexUri, '-'), theme.id]" class="element-theme">
+                            <mat-icon>subdirectory_arrow_right</mat-icon>
+                            <p>
+                                {{sousTheme.nom}} 
+                                <span>({{sousTheme.formation.length}})<mat-icon class="mat-icon">visibility</mat-icon> </span>
+                            </p>
                         </li>
                      </ul>
                  </div>

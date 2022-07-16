@@ -1,5 +1,6 @@
 package filrougePYO.back.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -8,8 +9,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table
 public class Formation {
@@ -20,7 +24,7 @@ public class Formation {
 	private String nom;
 	@Column(name="personnalise")
 	private Boolean personnalise;
-	@Column(name="description")
+	@Column(name="description", columnDefinition = "TEXT")
 	private String description;
 	@Column(name="prix")
 	private Integer prix;
@@ -33,18 +37,30 @@ public class Formation {
 	}
 
 	@ManyToMany
-	@JoinTable(
-            name = "formation_theme",
-            joinColumns = @JoinColumn(name="formation_id"),
-            inverseJoinColumns = @JoinColumn(name = "theme_id"))	
-	private List<Theme> theme;
+	@JoinTable(name = "formation_theme", joinColumns = @JoinColumn(name="formation_id"), inverseJoinColumns = @JoinColumn(name = "theme_id"))
+	@JsonIgnore
+	private List<Theme> themes = new ArrayList<Theme>();
 
-	public List<Theme> getTheme() {
-		return theme;
+	public void setThemes(Theme themes) {
+		
+		this.themes.add(themes);
+	}
+	
+
+
+
+	public Formation(Long id, String nom, Boolean personnalise, String description, Integer prix, Theme themes) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.personnalise = personnalise;
+		this.description = description;
+		this.prix = prix;
+		this.setThemes(themes);
 	}
 
-	public void setTheme(List<Theme> theme) {
-		this.theme = theme;
+	public List<Theme> getThemes() {
+		return themes;
 	}
 
 	public Formation() {
@@ -53,7 +69,7 @@ public class Formation {
 	}
 	
 	public Formation(Long id, String nom, Boolean personnalise, String description, Integer prix) {
-		super();
+		System.out.println("sqdqsdqsdqdsqsd");
 		this.setId(id);
 		this.setNom(nom);
 		this.setPersonnalise(personnalise);
@@ -61,14 +77,6 @@ public class Formation {
 		this.setPrix(prix);
 	}
 
-	public Formation(Long id, String nom, Boolean personnalise, String description, Integer prix, List<Theme> theme) {
-		this.id = id;
-		this.nom = nom;
-		this.personnalise = personnalise;
-		this.description = description;
-		this.prix = prix;
-		this.theme = theme;
-	}
 
 	public Long getId() {
 		return id;
@@ -100,6 +108,10 @@ public class Formation {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public String toString() {
+		return this.getNom() + "/" + this.getDescription() + "/" +this.getPersonnalise() + "/" + this.getPrix()  +"/" + this.getThemes() + "/";
 	}
 	
 	
