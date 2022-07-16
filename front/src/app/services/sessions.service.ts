@@ -1,7 +1,9 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { Injectable , OnInit} from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+
 import { BehaviorSubject } from "rxjs";
+
 
 
 @Injectable
@@ -12,23 +14,41 @@ export class SessionsService{
   private formationSource = new BehaviorSubject(null);
   currentFormation = this.formationSource.asObservable();
 
+  private sessionSource = new BehaviorSubject(null);
+  currentSession = this.formationSource.asObservable();
+
   data = []
-  sessions: any = {}
-  static currentSession: any;
+  formation!:any
+  sessions!: any
+  urlApi="http://localhost:8080";
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
-    this.http.get('http://localhost:8080/sessions').subscribe((sessions: any) =>{
-      console.log(sessions)
-
+  constructor(
+    private http: HttpClient,
+    private activatedRoute: ActivatedRoute,
+    private router: Router)
+    {
+    this.http.get('http://localhost:8080/adresses').subscribe((sessions: any) =>{
       if(sessions.length > 0){
-        this.formationSource.next(sessions)
-        // console.log(sessions)
+        this.sessionSource.next(sessions)
         this.data = sessions
+
       }
     })
    }
 
-   detailsFormation(formation: any){
-    this.formationSource.next(formation)
+   changeSession(session: any){
+    this.formationSource.next(session)
+   }
+
+   detailsSession(session: any){
+    this.sessionSource.next(session)
+   }
+
+   envoiFormulaire(session: any){
+    this.http.post(this.urlApi+"/sessions/ajoutSession", session).subscribe();
+    console.log(session)
    }
 }
+
+
+

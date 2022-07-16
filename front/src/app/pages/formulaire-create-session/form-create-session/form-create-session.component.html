@@ -1,0 +1,100 @@
+<!-- <p>form-create-session works!</p>
+
+<form class="form-create-session" [formGroup]="sessionForm">
+  <div class="row">
+       
+    <div class="container-input">
+      <label for="session">Session</label>        <label for="date"
+        >Date :</label
+      >
+               
+      <input
+        type="Date"
+        class="input"
+        formControlName="date"
+        placeholder="date-de-formation"
+        value=""
+      />
+       <label for="prix">Prix :</label>  
+      <input
+        type="float"
+        class="input"
+        formControlName="prix"
+        placeholder="prix-de-formation"
+        value=""
+      />
+      <span>€</span>
+
+       <label for="lien">Lien :</label>  
+      <input
+        type="text"
+        class="input"
+        formControlName="lien"
+        placeholder="lien-de-formation"
+        value=""
+      />     
+    </div>
+
+       
+    <div class="col-md-4 mb-3">
+            <label for="type">Type</label>      
+      <select class="custom-select d-block w-100" formControlName="session">
+               
+        <option value="">Choose...</option>
+             
+        <option value="{{ session.id }}" *ngFor="let session of sessions">
+          {{ session.type }}
+        </option>
+         
+        <option>Intra Muros</option>
+               
+        <option>En Entreprise</option>
+             
+      </select>
+               
+    </div>
+
+       
+    <div class="mb-3">
+            <label for="email">Email : </label>      
+      <input
+        type="email"
+        class="input"
+        formControlName="email"
+        placeholder="you@example.com"
+        value=""
+      />
+               
+    </div>
+       
+    <div class="container-test">
+            <label class="custom-control-label" for="test">TEST</label>
+      <br />
+      <div
+        class="cadre-test"
+        style="
+          width: 25%;
+          height: 20%;
+          background-color: aquamarine;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        "
+      >
+        <input type="checkbox" name="test" value="SQL" />CULTURE GENERALE
+        INFORMATIQUE<br />
+        <input type="checkbox" name="test" value="SQL" />TEST TECHNIQUE<br />
+        <input type="checkbox" name="test" value="SQL" />ORTOGRAPHE<br />
+        <input type="checkbox" name="test" value="logique" />LOGIQUE<br />
+        <input type="checkbox" name="test" value="algo" />ALGORYTHME<br />
+        <input type="checkbox" name="test" value="reseau" />RESEAU<br />
+        <input type="checkbox" name="test" value="projet" />SOFTS SKILLS<br />
+      </div>
+         
+    </div>
+
+    <div class="container-btn-inscription">
+      <button class="btn" (click)="submitForm()">
+        ENREGISTRER LA FORMATION
+      </button>
+</div>
+</form> -->

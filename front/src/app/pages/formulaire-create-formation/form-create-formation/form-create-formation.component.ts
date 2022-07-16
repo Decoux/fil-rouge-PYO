@@ -16,18 +16,19 @@ export class FormCreateFormationComponent implements OnInit {
   sessionService: any;
 
   constructor(
-    private formationService: FormationsService,
+    private formationsService: FormationsService,
     private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
-    private themesService : ThemesService
+    private themesService: ThemesService
   ) {}
+
   formationForm!: FormGroup;
   formation!: FormationModel;
   session!: SessionModel;
-  themes !: Theme[];
-subscription! : Subscription;
+  themes!: Theme[];
+  subscription!: Subscription;
   ngOnInit(): void {
-    //this.formationService.getAll();
+    //this.formationsService.getAll();
     this.formationForm = this.fb.group({
       id: [''],
       nom: ['', [Validators.required]],
@@ -36,18 +37,22 @@ subscription! : Subscription;
       theme: [0],
     });
 
-    this.subscription= this.themesService.currentThemes.subscribe((themes : any) =>{
-console.log(themes)
-      if(themes.length >0){
-        this.themes= themes;
+    this.subscription = this.themesService.currentThemes.subscribe(
+      (themes: any) => {
+        console.log(themes);
+        if (themes.length > 0) {
+          this.themes = themes;
+        }
       }
-    })
+    );
   }
 
   public submitForm() {
     this.formation = this.formationForm.value;
-    this.formation.theme= this.themes.filter(t => t.id== this.formationForm.value.theme)[0];
+    this.formation.themes = this.themes.filter(
+      (t) => t.id == this.formationForm.value.theme
+    )[0];
     ///console.log(this.formation)
-    this.formationService.envoiFormulaire(this.formation);
+    this.formationsService.envoiFormulaire(this.formation);
   }
 }

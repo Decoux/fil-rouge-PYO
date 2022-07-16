@@ -13,6 +13,7 @@ import { AdminPageComponent } from './pages/admin/admin-page/admin-page.componen
 import { ListeDesSessionsComponent } from './pages/admin/liste-des-sessions/liste-des-sessions.component';
 import { ListeDesUtilisateursComponent } from './pages/admin/liste-des-utilisateurs/liste-des-utilisateurs.component';
 import { AdminCardsComponent } from './pages/admin/admin-cards/admin-cards.component';
+import { FormCreateSessionComponent } from './pages/formulaire-create-session/form-create-session/form-create-session.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'liste-des-sessions', component: ListeDesSessionsComponent },
       { path: 'liste-des-utilisateur', component: ListeDesUtilisateursComponent },
       { path: 'ajouter-une-formation', component: FormCreateFormationComponent },
+       { path: 'ajouter-une-session', component: FormCreateSessionComponent },
     ]
   },
 
