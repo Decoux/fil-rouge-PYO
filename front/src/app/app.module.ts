@@ -33,6 +33,9 @@ import { AdminPageComponent } from './pages/admin/admin-page/admin-page.componen
 import { AdminCardsComponent } from './pages/admin/admin-cards/admin-cards.component';
 import { FormationCardComponent } from './pages/formations-page/formation-card/formation-card.component';
 import { SousThemeComponent } from './pages/formations-page/sidenav/sous-theme/sous-theme.component';
+import { FormulaireCreateSessionComponent } from './pages/formulaire-create-session/formulaire-create-session.component';
+import { FormulaireCreateDomaineComponent } from './pages/formulaire-create-domaine/formulaire-create-domaine.component';
+import { FormulaireCreateThemeComponent } from './pages/formulaire-create-theme/formulaire-create-theme.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +60,10 @@ import { SousThemeComponent } from './pages/formations-page/sidenav/sous-theme/s
     DomainesUlComponent,
     AdminCardsComponent,
     FormationCardComponent,
-    SousThemeComponent
+    SousThemeComponent,
+    FormulaireCreateSessionComponent,
+    FormulaireCreateDomaineComponent,
+    FormulaireCreateThemeComponent
   ],
 
   imports: [

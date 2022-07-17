@@ -3,8 +3,10 @@ package filrougePYO.back.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -28,28 +30,12 @@ public class Formation {
 	private String description;
 	@Column(name="prix")
 	private Integer prix;
-	public Integer getPrix() {
-		return prix;
-	}
-
-	public void setPrix(Integer prix) {
-		this.prix = prix;
-	}
-
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	@JoinTable(name = "formation_theme", joinColumns = @JoinColumn(name="formation_id"), inverseJoinColumns = @JoinColumn(name = "theme_id"))
 	@JsonIgnore
 	private List<Theme> themes = new ArrayList<Theme>();
 
-	public void setThemes(Theme themes) {
-		
-		this.themes.add(themes);
-	}
-	
-
-
-
-	public Formation(Long id, String nom, Boolean personnalise, String description, Integer prix, Theme themes) {
+	public Formation(Long id, String nom, Boolean personnalise, String description, Integer prix, List<Theme> themes) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -59,13 +45,8 @@ public class Formation {
 		this.setThemes(themes);
 	}
 
-	public List<Theme> getThemes() {
-		return themes;
-	}
-
 	public Formation() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Formation(Long id, String nom, Boolean personnalise, String description, Integer prix) {
@@ -75,6 +56,14 @@ public class Formation {
 		this.setPersonnalise(personnalise);
 		this.setDescription(description);
 		this.setPrix(prix);
+	}
+	
+	public List<Theme> getThemes() {
+		return themes;
+	}
+	
+	public void setThemes(List<Theme> themes) {
+		this.themes = themes;
 	}
 
 
@@ -108,6 +97,14 @@ public class Formation {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public Integer getPrix() {
+		return prix;
+	}
+
+	public void setPrix(Integer prix) {
+		this.prix = prix;
 	}
 	
 	public String toString() {

@@ -13,16 +13,24 @@ import { AdminPageComponent } from './pages/admin/admin-page/admin-page.componen
 import { ListeDesSessionsComponent } from './pages/admin/liste-des-sessions/liste-des-sessions.component';
 import { ListeDesUtilisateursComponent } from './pages/admin/liste-des-utilisateurs/liste-des-utilisateurs.component';
 import { AdminCardsComponent } from './pages/admin/admin-cards/admin-cards.component';
-
+import { FormulaireCreateSessionComponent } from './pages/formulaire-create-session/formulaire-create-session.component';
+import { FormulaireCreateDomaineComponent } from './pages/formulaire-create-domaine/formulaire-create-domaine.component';
+import { FormulaireCreateThemeComponent } from './pages/formulaire-create-theme/formulaire-create-theme.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
   { path: 'admin', component: AdminPageComponent,
     children: [
-      { path: '', component: AdminCardsComponent },
-      { path: 'liste-des-sessions', component: ListeDesSessionsComponent },
-      { path: 'liste-des-utilisateur', component: ListeDesUtilisateursComponent },
-      { path: 'ajouter-une-formation', component: FormCreateFormationComponent },
+      { path: '', component: AdminCardsComponent,
+        children: [
+          { path: 'ajouter-une-formation', component: FormCreateFormationComponent },
+          { path: 'ajouter-une-session', component: FormulaireCreateSessionComponent },
+          { path: 'ajouter-un-domaine', component: FormulaireCreateDomaineComponent },
+          { path: 'ajouter-un-theme', component: FormulaireCreateThemeComponent },
+          { path: 'liste-des-sessions', component: ListeDesSessionsComponent },
+          { path: 'liste-des-utilisateurs', component: ListeDesUtilisateursComponent },
+          
+        ] },
     ]
   },
 
@@ -30,12 +38,12 @@ const routes: Routes = [
 { path: 'recherche', component: RechercheComponent },
 { path: 'formCreerFormation', component: FormCreateFormationComponent },
   { path: 'inscription-client', component: FormulaireInscriptionClientComponent},
-  { path: 'admin', component: AdminPageComponent,
-    children: [
-      { path: 'liste-des-sessions', component: ListeDesSessionsComponent},
-      { path: 'liste-des-utilisateurs', component: ListeDesUtilisateursComponent},
-    ]
-  },
+  // { path: 'admin', component: AdminPageComponent,
+  //   children: [
+  //     { path: 'liste-des-sessions', component: ListeDesSessionsComponent},
+  //     { path: 'liste-des-utilisateurs', component: ListeDesUtilisateursComponent},
+  //   ]
+  // },
 
   {
     path: 'catalogue',

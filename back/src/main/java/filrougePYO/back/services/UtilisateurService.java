@@ -18,9 +18,11 @@ public class UtilisateurService {
 	}
 	
 	public Utilisateur addUser(Utilisateur utilisateur) {
-		System.out.println(utilisateur);
-		
 		return this.utilisateurDao.saveAndFlush(utilisateur);
+	}
+	
+	public List<Utilisateur> findByRole(Long id){
+		return this.utilisateurDao.findByRole(id);
 	}
 
 }

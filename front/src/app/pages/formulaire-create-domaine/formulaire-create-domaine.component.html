@@ -1,0 +1,7 @@
+<form [formGroup]="domaineForm">
+    <div class="input-group">
+        <label class="label" for="">Nom du domaine :</label>
+        <input class="input" type="text" formControlName="nom">
+    </div>
+    <button (click)="submit()">Ajouter</button>
+</form>

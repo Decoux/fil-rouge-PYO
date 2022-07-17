@@ -3,6 +3,7 @@ package filrougePYO.back.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +20,7 @@ public class Domaine {
 	@Column(name="nom")
 	private String nom;
 	
-	@OneToMany(mappedBy = "domaine")
+	@OneToMany(mappedBy = "domaine", cascade = CascadeType.REMOVE)
 	private List<Theme> themes = new ArrayList<>();
 	
 	public List<Theme> getThemes() {
@@ -29,12 +30,9 @@ public class Domaine {
 	public void setThemes(List<Theme> themes) {
 		this.themes = themes;
 	}
-	
-
 
 	public Domaine() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Domaine(Long id, String nom) {
@@ -58,8 +56,4 @@ public class Domaine {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	
-	
-	
-	
 }

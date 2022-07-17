@@ -1,0 +1,24 @@
+
+<form [formGroup]="themeForm">
+    <div class="input-group">
+        <label class="label" for="">Nom :</label>
+        <input class="input" type="text" formControlName="nom">
+    </div>
+    <div class="input-group">
+        <label class="label" for="">Theme parent :</label>
+        <select class="input" type="text" formControlName="parent_id">
+            <option [ngValue]="null" disabled>Selectionner une formation</option>
+            <option [ngValue]="theme.id" *ngFor="let theme of themes">{{theme.nom}}</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label class="label" for="">Domaine :</label>
+        <select class="input" type="text" formControlName="domaine">
+            <option [ngValue]="null" disabled>Selectionner une formation</option>
+            <option [ngValue]="domaine" *ngFor="let domaine of domaines">{{domaine.nom}}</option>
+        </select>
+    </div>
+  
+  
+    <button (click)="submit()">Ajouter</button>
+</form>

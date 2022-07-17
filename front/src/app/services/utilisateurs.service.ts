@@ -1,6 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 // Interface
 import  UtilisateurModel from '../models/utilisateur.model'
@@ -29,6 +29,10 @@ export class UtilisateurService  {
             nom:'entreprise 101'
         }
         this.httpClient.post('http://localhost:8080/utilisateurs/ajout', user).subscribe()
+    }
+
+    public getByRole(id: number): Observable<any>{
+        return this.httpClient.get('http://localhost:8080/utilisateurs/getByRole/'+ id);
     }
 
 

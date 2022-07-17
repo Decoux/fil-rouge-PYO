@@ -1,6 +1,7 @@
 package filrougePYO.back.services;
 
 import filrougePYO.back.dao.ThemeDao;
+import filrougePYO.back.entity.Domaine;
 import filrougePYO.back.entity.Formation;
 import filrougePYO.back.entity.Theme;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,15 @@ public class ThemeService {
       return themeDao.findAll();
     }
     
+    public Theme getThemeById(Long id){
+        return themeDao.findById(id).get();
+     }
+    
     public Optional<Theme> getThemeWithFormations(int id) {
 		return themeDao.findById((long) id);   
+	}
+    
+	public void save(Theme theme){
+	    this.themeDao.save(theme);
 	}
 }

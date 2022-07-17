@@ -1,0 +1,37 @@
+<form [formGroup]="sessionForm">
+    <div class="input-group">
+        <label class="label" for="">Formation :</label>
+        <select class="input" type="text" formControlName="formation">
+            <option [ngValue]="null" disabled>Selectionner une formation</option>
+            <option [ngValue]="formation" *ngFor="let formation of formations">{{formation.nom}}</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label class="label" for="">Lieu :</label>
+        <input class="input" type="text" formControlName="lieu">
+    </div>
+    <div class="input-group">
+        <label class="label" for="">Date :</label>
+        <input class="input" type="date" formControlName="date">
+    </div>
+    <div class="input-group">
+        <label class="label" for="">Lien :</label>
+        <input class="input" type="text" formControlName="lien">
+    </div>
+    <div class="input-group">
+        <label class="label" for="">Confirmation formateur :</label>
+        <select class="input" type="text" formControlName="confirmation_formateur">
+            <option [ngValue]="null" disabled>Selectionner un formateur</option>
+            <option [ngValue]="formateur.id" *ngFor="let formateur of formateurs">{{formateur.prenom}} {{formateur.nom}}</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label class="label" for="">Type :</label>
+        <select class="input" type="text" formControlName="type">
+            <option value="INTER">INTER</option>
+            <option value="INTRA">INTRA</option>
+
+        </select>
+    </div>
+    <button (click)="submit()">Ajouter</button>
+</form>

@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { BehaviorSubject } from "rxjs";
 
@@ -28,5 +29,9 @@ export class SessionsService{
 
    detailsFormation(formation: any){
     this.formationSource.next(formation)
+   }
+
+   ajouterUneNouvelleSession(value: any){
+    this.http.post("http://localhost:8080/sessions/ajout", value).subscribe()
    }
 }

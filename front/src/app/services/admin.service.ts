@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AdminService  {
 
     actions = [
+
         {
           label: 'Liste des sessions',
           value: 'liste-des-sessions'
@@ -19,12 +20,20 @@ export class AdminService  {
           value: 'liste-des-utilisateurs'
         },
         {
-          label: 'Ajouter une session de formation',
-          value: 'ajouter-une-session'
+          label: 'Ajouter un domaine',
+          value: 'ajouter-un-domaine'
+        },
+        {
+          label: 'Ajouter un thème',
+          value: 'ajouter-un-theme'
         },
         {
           label: 'Ajouter une formation',
           value: 'ajouter-une-formation'
+        },
+        {
+          label: 'Ajouter une session de formation',
+          value: 'ajouter-une-session'
         }
       ]
 

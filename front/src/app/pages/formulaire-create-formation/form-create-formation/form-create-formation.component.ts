@@ -45,6 +45,8 @@ subscription! : Subscription;
   }
 
   public submitForm() {
-    this.formationService.envoiFormulaire(this.formationForm.value);
+    let theme = this.formationForm.value.themes
+    this.formationService.envoiFormulaire(this.formationForm.value, theme);
+    this.formationForm.reset();
   }
 }

@@ -18,20 +18,17 @@ public class SessionController {
     @Autowired
      private SessionService sessionService;
 
-@Autowired
-private FormationService formationService;
-
-
     @GetMapping("")
     @ResponseStatus(code= HttpStatus.OK)
     public List<Session> findAll(){
        return this.sessionService.findAll();
     }
-@PostMapping("ajout")
-    @ResponseStatus(code=HttpStatus.OK)
+    @PostMapping("ajout")
+    @ResponseStatus(code=HttpStatus.CREATED)
     public void addSession(@RequestBody Session session){
-        System.out.println(session.getFormation().getId());
-}
+    	System.out.println(session.getFormation().getId());
+        this.sessionService.addSession(session);
+    }
 
 
 }

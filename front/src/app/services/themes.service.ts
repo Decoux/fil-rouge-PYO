@@ -23,6 +23,11 @@ currentThemes = this.themesSource.asObservable();
     });
    }
 
+   public ajouterUnTheme(data: any){
+    this.http.post(this.urlApi + "/themes/ajout/" + data.domaine.id, data).subscribe()
+   }
+  
+
 
 
 

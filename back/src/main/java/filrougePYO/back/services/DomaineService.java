@@ -13,6 +13,7 @@ import filrougePYO.back.dao.DomaineDao;
 import filrougePYO.back.dto.DomaineDto;
 import filrougePYO.back.dto.ThemeAvecSousThemes;
 import filrougePYO.back.entity.Domaine;
+import filrougePYO.back.entity.Session;
 import filrougePYO.back.entity.Theme;
 
 @Service
@@ -99,4 +100,12 @@ public class DomaineService {
 	public List<Domaine> findAll(){
 		return this.domaineDao.findAll();
 	}
+	
+	public void save(Domaine domaine){
+	    this.domaineDao.save(domaine);
+	}
+	
+   public Domaine getDomaineById(Long id){
+        return this.domaineDao.findById(id).get();
+     }
 }

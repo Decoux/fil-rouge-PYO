@@ -18,13 +18,11 @@ public class Entreprise {
 	private Long id;
 	@Column(name="nom")
 	private String nom;
-
 	@OneToMany(mappedBy = "entreprise")
     private List<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
 	
 	public Entreprise() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Entreprise(Long id, String nom) {

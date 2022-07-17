@@ -36,8 +36,7 @@ public class Session {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Session(Long id, Date date, String lieu, Formation formation, String lien, Type type,
-			Boolean confirmation_formateur) {
+	public Session(Long id, Date date, String lieu, Formation formation, String lien, Type type,Boolean confirmation_formateur) {
 		super();
 		this.setId(id);
 		this.setDate(date);

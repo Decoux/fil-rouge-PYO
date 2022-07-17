@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,23 +41,14 @@ public class UtilisateurController {
 	@PostMapping("ajout")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public void addUser(@RequestBody Utilisateur utilisateur) {
-		System.out.println(utilisateur.getNom());
-		
-		
 		utilisateur.setRole_id((long) 3);
-		System.out.println(this.role.toString());
-
-		System.out.println(utilisateur.toString());
-//		Role role = new Role()
-//		this.role.setId(1);
-		
 		entrepriseService.create(utilisateur.getEntreprise());
-//		utilisateur.setEntreprise(null);
-		//System.out.println(entreprise);
-//		this.roleDao.save(new Role());
-//		utilisateur.setBirthDay(new Date(utilisateur.getBirthDay()));
-//		System.out.println(utilisateur.g);
-		System.out.println(this.role.getId());
 		this.utilisateurService.addUser(utilisateur);
+	}
+	
+	@GetMapping("/getByRole/{roleId}")
+	public List<Utilisateur> findByRole(@PathVariable(value = "roleId") Long roleId) {
+		System.out.println(roleId);
+		return utilisateurService.findByRole(roleId);
 	}
 }

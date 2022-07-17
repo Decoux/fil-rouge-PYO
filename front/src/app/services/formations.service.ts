@@ -69,13 +69,16 @@ export class FormationsService  {
     this.formationSource.next(formation)
    }
 
-   envoiFormulaire(formation: any){
-    this.http.post(this.urlApi+"/formations/ajoutFormation", formation).subscribe();
-    console.log(formation)
+   envoiFormulaire(formation: any, theme: any){
+    this.http.post(this.urlApi+"/formations/ajoutFormation/" + theme.id, formation).subscribe();
    }
 
    getFormationsByThemeId(theme_id: any){
     return this.http.get(this.urlApi + '/themes/id=' + parseInt(theme_id));
+   }
+
+   getFormations(){
+    return this.http.get(this.urlApi + '/formations/findAll');
    }
 
 } 
