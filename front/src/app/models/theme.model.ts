@@ -3,7 +3,7 @@
 // theme
 import FormationModel from "./formation.model";
 
-export default interface Theme extends FormationModel {
+export default interface Theme  {
   id : number;
   nom: string;
   formation: Array<FormationModel>;

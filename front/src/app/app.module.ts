@@ -34,6 +34,7 @@ import { AdminCardsComponent } from './pages/admin/admin-cards/admin-cards.compo
 import { FormationCardComponent } from './pages/formations-page/formation-card/formation-card.component';
 import { FormCreateSessionComponent } from './pages/formulaire-create-session/form-create-session/form-create-session.component';
 import { SousThemeComponent } from './pages/formations-page/sidenav/sous-theme/sous-theme.component';
+import { PageFormCreateFormationCompleteComponent } from './pages/page-form-create-formation-complete/page-form-create-formation-complete.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +60,8 @@ import { SousThemeComponent } from './pages/formations-page/sidenav/sous-theme/s
     AdminCardsComponent,
     FormationCardComponent,
     FormCreateSessionComponent,
-    SousThemeComponent
+    SousThemeComponent,
+    PageFormCreateFormationCompleteComponent
   ],
 
   imports: [

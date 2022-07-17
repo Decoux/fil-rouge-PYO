@@ -21,5 +21,8 @@ public class FormationService {
     	System.out.println(formation.getPersonnalise());
     	System.out.println(formation.getThemes());
          formationDao.save(formation);
+
+
+
     }
 }

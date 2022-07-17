@@ -1,14 +1,14 @@
 <div class="container-domaine">
     <div class="title-domaine" (click)="showThemes(theme)">
-        <p>{{theme.nom}}sdqsdsqsdqsd</p>     
+        <p>{{theme.nom}}</p>
         <div class="container-icons">
             <!-- <span>{{theme.formation.length}}</span> -->
-            
+
             <mat-icon *ngIf="!isShowThemes && theme.themes && theme.themes.length > 0">keyboard_arrow_down</mat-icon>
             <mat-icon *ngIf="isShowThemes && theme.themes && theme.themes.length > 0">keyboard_arrow_up</mat-icon>
             <mat-icon *ngIf="!theme.themes" class="mat-icon">visibility</mat-icon>
         </div>
-              
+
     </div>
     <div *ngIf="isShowThemes" [ngStyle]="{'margin-left': '25px'}"  class="container-app-theme">
         <ng-container *ngFor="let theme of theme.themes">

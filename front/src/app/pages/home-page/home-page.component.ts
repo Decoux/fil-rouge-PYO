@@ -7,11 +7,8 @@ import { SessionsService } from 'src/app/services/sessions.service';
 })
 export class HomePageComponent implements OnInit {
   subscription: any;
-
-  constructor(private sessionsService: SessionsService) {}
-
   formations: any;
-
+  constructor(private sessionsService: SessionsService) {}
 
   ngOnInit(): void {
     this.subscription = this.sessionsService.currentFormation.subscribe(
@@ -25,5 +22,4 @@ export class HomePageComponent implements OnInit {
       }
     );
   }
-
 }

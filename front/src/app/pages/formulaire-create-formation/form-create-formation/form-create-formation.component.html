@@ -2,7 +2,7 @@
   <div class="row">
     <div class="container-input">
       <label for="theme" class="label"
-        >Thème<span class="required-input"></span
+        >Thème :<span class="required-input"></span
       ></label>
       <select class="custom-select d-block w-100" formControlName="theme">
         <option value="{{ theme.id }}" *ngFor="let theme of themes">
@@ -10,7 +10,7 @@
         </option>
       </select>
 
-      <label for="formation">Formation</label>
+      <label for="formation">Formation :<span class="required-input">*</span></label>
       <input
         type="text"
         class="input"
@@ -18,16 +18,16 @@
         placeholder="Nom de la formation"
       />
 
-      <label for="description">Détails de la Formation</label>
+      <label for="description">Détails de la Formation :</label>
       <input
         type="textarea"
         class="input"
         formControlName="description"
         placeholder="decrire la formation"
       />
-      <label for="prix ">Prix</label>
+      <label for="prix ">Prix :<span class="required-input">*</span></label>
       <input type="float" class="input" formControlName="prix" /><span>€</span>
-      <div class="invalid-feedback">Valid prix is required.</div>
+
     </div>
 
     <!-- <h4 class="mb-3">
