@@ -1,7 +1,47 @@
-.cadre-test{
-  padding-top: 50px;
-  background-color: rgb(141, 197, 245);
-  width: 150px;
-  height: 150px;
+
+form{
+    width: 160%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .input-group{
+        justify-content: flex-end;
+        margin: 1px;
+        .label{
+            margin-right: 20px;
+            display: flex;
+            align-items: flex-end;
+
+        }
+        .input{
+            width: 70%;
+            padding: 10px;
+            line-height: 0;
+            border: 1px solid #dedede;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+        .input:focus-visible, .select:focus-visible {
+            outline: none;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+
+        }
+        .input:hover, .select:hover {
+            // box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            border-bottom: 1px solid #f7b982;
+        }
+    }
+    button{
+        border: 1px solid #dedede;
+        background-color: #f5f5f5;
+        width: 150px;
+        margin-top: 20px;
+    }
+    button:hover{
+        background-color: rgb(161, 184, 231);
+        transition: background-color 0.2s;
+    }
 
 }

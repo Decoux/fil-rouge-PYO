@@ -1,191 +1,36 @@
-<form class="form-create-formation" [formGroup]="formationForm">
-  <div class="row">
-    <div class="container-input">
-      <!-- <label for="" class="label"
-        >Formateur : <span class="required-input"></span
-      ></label>
-      <input
-        type="text"
-        class="input"
-        formControlName="nom"
-        placeholder="Nom du formateur"
-      /> -->
-      <!-- <input
-        type="text"
-        class="input"
-        formControlName="prenom"
-        placeholder="Prénom du formateur"
-      />
+
+
+    <form [formGroup]="formationForm">
+      <div class="input-group">
+          <label class="label" for="">Nom :</label>
+          <input class="input" type="text" formControlName="nom">
+      </div>
+
+      <div class="input-group">
+          <label class="label" for="">Theme:</label>
+          <select class="input" type="text" formControlName="theme">
+              <option [ngValue]="null" disabled>Selectionner un theme</option>
+              <option [ngValue]="theme" *ngFor="let theme of themes">{{theme.nom}}</option>
+          </select>
+      </div>
+      <div class="input-group">
+        <label class="label" for="">Description :</label>
+        <input class="input" type="text" formControlName="description">
+      </div>
+      <div class="input-group">
+        <label class="label" for="">Prix :<span>€</span></label>
+        <input class="input" type="number" formControlName="prix">
     </div>
 
-    <div class="container-input">
-      <label for="" class="label"
-        >Domaine : <span class="required-input"></span
-      ></label>
-      <input
-        type="text"
-        class="input"
-        formControlName="nom"
-        placeholder="Nom de domaine"
-      /> -->
+      <button (click)="submitForm()">Ajouter</button>
 
-      <label for="theme" class="label"
-        >Thème<span class="required-input"></span
-      ></label>
-      <!-- <input
-        type="text"
-        class="input"
-        formControlName="theme"
-        placeholder="Theme de la formation"
-      /> -->
-
-      <select class="custom-select d-block w-100"  formControlName="themes">
-        <option [ngValue]="theme" *ngFor="let theme of themes">{{theme.nom}}</option>
-      </select>
-
-      <label for="formation">Formation</label>
-      <input
-        type="text"
-        class="input"
-        formControlName="nom"
-        placeholder="Nom de la formation"
-      />
-
-    <label for="description">Détails de la Formation</label>
-    <input
-      type="textarea"
-      class="input"
-      formControlName="description"
-      placeholder="decrire la formation"
-    />
-    <label for="prix ">Prix</label>
-    <input type="number" class="input" formControlName="prix" /><span>€</span>
-    <div class="invalid-feedback">Valid prix is required.</div>
-  </div>
-    <!--
-    <div class="container-input">
-      <label for="session">Session</label>
-      <input
-        type="number"
-        style="visibility: hidden"
-        class="input"
-        form-controlName="nom"
-        placeholder="Nom-de-session ou numero"
-
-      /> -->
-    <!--
-      <input
-        type="Date"
-        class="form-control"
-        id="date"
-        placeholder="date-de-formation"
-        value=""
-        required=""
-      />
-      <div class="invalid-feedback">Valid date is required.</div>
+      <!-- <h4 class="mb-3">
+      En attente de Validation de la formation par le Responsable</h4>
+      <span style="visibility: hidden"
+      >Validation de la formation par le Responsable ce "date"</span> -->
+    </form>
 
 
-    </div>
 
-    <div class="col-md-4 mb-3">
-      <label for="type">Type</label>
-      <select class="custom-select d-block w-100" id="state" required="">
-        <option value="">Choose...</option>
-        <option>Intra Muros</option>
-        <option>En Entreprise</option>
-      </select>
-      <div class="invalid-feedback">Please provide a valid type.</div>
-    </div>
 
-    <div class="container-input">
-      <label for="session">Adresse</label>
-      <label for="session">Rue :</label
-      ><input
-        type="text"
-        class="form-control"
-        id="rue"
-        placeholder="rue"
-        value=""
-        required=""
-      />
-      <div class="invalid-feedback">Valid rue is required.</div>
-      <label for="session">Numéro :</label
-      ><input
-        type="number"
-        class="form-control"
-        id="numero"
-        placeholder="numero"
-        value=""
-        required=""
-      />
-      <div class="invalid-feedback">Valid numero is required.</div>
-      <label for="session">Ville :</label
-      ><input
-        type="text"
-        class="form-control"
-        id="ville"
-        placeholder="ville"
-        value=""
-        required=""
-      />
-      <div class="invalid-feedback">Valid ville is required.</div>
-      <label for="session">Code Postal :</label
-      ><input
-        type="number"
-        class="form-control"
-        id="codePostal"
-        placeholder="code-postal"
-        value=""
-        required=""
-      />
-      <div class="invalid-feedback">Valid numero is required.</div>
-    </div>
 
-    <div class="mb-3">
-      <label for="email">Email </label>
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        placeholder="you@example.com"
-      />
-      <div class="invalid-feedback">Please enter a valid email address</div>
-    </div>
-    <div class="container-test">
-      <label class="custom-control-label" for="test">TEST</label>
-      <br />
-      <div
-        class="cadre-test"
-        style="
-          width: 25%;
-          height: 20%;
-          background-color: aquamarine;
-          padding-top: 20px;
-          padding-bottom: 20px;
-        "
-      >
-        <input type="checkbox" name="test" value="SQL" />CULTURE GENERALE
-        INFORMATIQUE<br />
-        <input type="checkbox" name="test" value="SQL" />TEST TECHNIQUE<br />
-        <input type="checkbox" name="test" value="SQL" />ORTOGRAPHE<br />
-        <input type="checkbox" name="test" value="logique" />LOGIQUE<br />
-        <input type="checkbox" name="test" value="algo" />ALGORYTHME<br />
-        <input type="checkbox" name="test" value="reseau" />RESEAU<br />
-        <input type="checkbox" name="test" value="projet" />SOFTS SKILLS<br />
-      </div>-->
-    <!-- </div> -->
-
-    <h4 class="mb-3">
-      En attente de Validation de la formation par le Responsable
-    </h4>
-    <span style="visibility: hidden"
-      >Validation de la formation par le Responsable ce "date"</span
-    >
-
-    <div class="container-btn-inscription">
-      <button class="btn" (click)="submitForm()">
-        ENREGISTRER LA FORMATION
-      </button>
-    </div>
-  </div>
-</form>
